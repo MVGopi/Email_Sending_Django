@@ -31,15 +31,28 @@ class EmailForm(forms.Form):
     file      = forms.FileField() # for creating file input  
 ```
 ____
-The email sending along with file attachments class of django can be accessed as shown below
+### In views.py from app folder create a view for sending an email as shown below
 
 ```python
+from django.shortcuts import render
+from django.http import HttpResponse
+from email_sending.forms import EmailForm
+from myProject import settings
 from django.core.mail import EmailMessage
-email = EmailMessage(
-    'Subject of Email',
-    'Body goes here',
-    'from@example.com',
-    ['to@example.com'])
-email.attach_file('file_path')
-email.send()
+
+# Create your views here.
+
+def sendMail(request):
+	if request.method == 'POST':
+		to_mail = request.POST['email']
+		from_mail = settings.EMAIL_HOST_USER
+		email_sub = request.POST['subject']
+		email_body = request.POST['body']
+		file_name = request.POST['file']
+		mail = EmailMessage(email_sub, email_body, from_mail, [to_mail])
+		mail.attach_file(settings.STATIC_ROOT+settings.MEDIA_URL+file_name)
+		mail.send()
+		return HttpResponse("<h3 style = 'color:green'>Email sent successfully..!!!</h3>")
+	email_form = EmailForm()
+	return render(request, 'email.html', {'form' : email_form})
 ```
