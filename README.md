@@ -25,10 +25,14 @@ ____
 ```python
 from django import forms  
 class EmailForm(forms.Form):      
-    email     = forms.EmailField(label="Enter Email")
-    subject  = forms.CharField(label="Enter subject", max_length = 30)
-    message  = forms.CharField(label="Enter message", max_length = 100)  
-    file      = forms.FileField() # for creating file input  
+    email     = forms.EmailField(label = '', max_length = 40, 
+    	        widget=forms.EmailInput(attrs={'placeholder':'Enter Sender Email'}))
+    subject  = forms.CharField(label = '', max_length = 60, 
+    	       widget=forms.TextInput(attrs={'placeholder':'Enter Subject of Email'}))
+    body  = forms.CharField(label = '', max_length = 100, 
+    	    widget = forms.Textarea(attrs = {'placeholder':'Enter Email Body'}))  
+    file      = forms.FileField(label = '') # for creating file input
+ 
 ```
 ____
 ### In views.py from app folder create a view for sending an email as shown below
@@ -63,3 +67,20 @@ def sendMail(request):
 * EmailMessage is the classname in django.core.mail used for sending an email this class needs subject of email, body of email, sender mail, receiver mail parameters
 	* attch_file() is function of EmailMessage class to send an attacment along with email, It requires file path
 ____
+### Create email.html file in templates folder existed in email_sending app with below lines of html code
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Send Mail</title>
+</head>
+<body>
+<h3>Email Sending</h3>
+<form action="{% url 'send_mail' %}" method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Send</button>  
+</form>
+</body>
+</html>
+```
