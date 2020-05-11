@@ -67,7 +67,7 @@ def sendMail(request):
 * EmailMessage is the classname in django.core.mail used for sending an email this class needs subject of email, body of email, sender mail, receiver mail parameters
 	* attch_file() is function of EmailMessage class to send an attacment along with email, It requires file path
 ____
-### Create email.html file in templates folder existed in email_sending app with below lines of html code
+### Create email.html file in templates folder existed in app folder with below lines of html code
 ```html
 <!DOCTYPE html>
 <html>
@@ -84,3 +84,21 @@ ____
 </body>
 </html>
 ```
+____
+### Now include sendMail view in urls.py existed in project folder
+```python
+from django.contrib import admin
+from django.urls import path
+from email_sending import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.sendMail, name = 'send_mail')
+]
+```
+____
+### Run the server and check in browser will get an form for entering details to send an email as shown below
+
+____
+
+
