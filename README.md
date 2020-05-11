@@ -56,3 +56,10 @@ def sendMail(request):
 	email_form = EmailForm()
 	return render(request, 'email.html', {'form' : email_form})
 ```
+
+* In this case myProject is projectname and email_sending is appname
+	* Imported settings from myProject to access host email address and static file path
+	* Imported EmailForm from forms.py in email_sending app
+* EmailMessage is the classname in django.core.mail used for sending an email this class needs subject of email, body of email, sender mail, receiver mail parameters
+	* attch_file() is function of EmailMessage class to send an attacment along with email, It requires file path
+____
