@@ -7,6 +7,8 @@ Python provides a mail sending interface using smtplib(Simple Mail Transfer Prot
     * Security
         * Turn on Less secure app access
 
+![GitHub Image](Big%20secure.jpeg)
+
 The email sending along with file attachments class of django can be accessed as shown below
 
 ```python
