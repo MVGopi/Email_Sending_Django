@@ -103,7 +103,7 @@ ____
 ____
 ### Enter information to send an email in the form and click on send, So that your email is sent successfully
 
-* Confirm that sender received an email along with attachment, Thus how we can send an email using Django. For more information about this email sending can check the below references given
+* Confirm that receiver got an email along with attachment, Thus how we can send an email using Django. For more information about this email sending can check the below references given
 ____
 ### Reference
 
