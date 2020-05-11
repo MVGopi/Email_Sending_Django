@@ -99,7 +99,7 @@ urlpatterns = [
 ____
 ### Run the server and check in browser will get an form for entering details to send an email as shown below
 
-![Github Image](email_form.jpg)
+![Github Image](email_form.JPG)
 ____
 
 
