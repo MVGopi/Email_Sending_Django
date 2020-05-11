@@ -8,6 +8,8 @@ ____
     * Security
         * Turn on Less secure app access
         
+![Github Image](secure.JPG)
+
 Note : After completion of email sending turn off less secure apps option
 ____
 ### Add smtp and gmail account details in settings.py file existed in project folder
