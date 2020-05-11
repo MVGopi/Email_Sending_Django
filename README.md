@@ -10,17 +10,15 @@ ____
         
 **Note : After completion of email sending turn off less secure apps option**
 ____
-### Add smtp, gmail account details and media url for attachments in settings.py file existed in project folder
+### Add smtp and gmail account details in settings.py file existed in project folder
 ```python
 EMAIL_USE_TLS = True  
 EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587  
 EMAIL_HOST_USER = 'sender_username@gmail.com'
 EMAIL_HOST_PASSWORD = '********'
-
-MEDIA_URL = '/media_files/'
 ```
-
+____
 The email sending along with file attachments class of django can be accessed as shown below
 
 ```python
