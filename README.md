@@ -8,7 +8,7 @@ ____
     * Security
         * Turn on Less secure app access
         
-**Note : After completion of email sending turn off less secure apps option**
+Note : After completion of email sending turn off less secure apps option
 ____
 ### Add smtp and gmail account details in settings.py file existed in project folder
 ```python
