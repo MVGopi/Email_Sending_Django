@@ -1,5 +1,5 @@
 ## Email Sending in Django
-____
+
 Python provides a mail sending interface using smtplib(Simple Mail Transfer Protocol) module, Django provides an inbuilt classes over it. These classes are provided to make sending email extra quick, to help test email sending during development. Follow the procedure given below to send an email.
 ____
 ### Enable Less Secure Apps Option in Google Account Settings
