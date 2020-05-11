@@ -6,6 +6,7 @@ Python provides a mail sending interface using smtplib(Simple Mail Transfer Prot
 * Google Account Settings
     * Security
         * Turn on Less secure app access
+        
 **Note : After completion of email sending turn off less secure apps option**
 
 The email sending along with file attachments class of django can be accessed as shown below
