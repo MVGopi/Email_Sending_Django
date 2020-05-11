@@ -21,7 +21,7 @@ EMAIL_HOST_USER = 'sender_username@gmail.com'
 EMAIL_HOST_PASSWORD = '********'
 ```
 ____
-### Create forms.py file in app folder for generating a form with subject, email, message, file fields by using below lines of code
+### Create forms.py file in app folder for generating a form with email, subject, body, file fields by using below lines of code
 ```python
 from django import forms  
 class EmailForm(forms.Form):      
@@ -105,7 +105,7 @@ ____
 
 * Confirm that sender received an email along with attachment, Thus how we can send an email using Django. For more information about this email sending can check the below references given
 ____
-### References
+### Reference
 
 [Email Sending Using Django Reference Link](https://docs.djangoproject.com/en/3.0/topics/email/)
 
