@@ -1,6 +1,7 @@
 ## Email Sending in Django
 
-Python provides a mail sending interface using smtplib(Simple Mail Transfer Protocol) module, Django provides an inbuilt classes over it. These classes are provided to make sending email extra quick, to help test email sending during development.
+Python provides a mail sending interface using smtplib(Simple Mail Transfer Protocol) module, Django provides an inbuilt classes over it. These classes are provided to make sending email extra quick, to help test email sending during development. Follow the given below procedure for sending an email.
+
 #### Enable Less Secure Apps Option in Google Account Settings
 
 * Google Account Settings
@@ -11,27 +12,6 @@ Python provides a mail sending interface using smtplib(Simple Mail Transfer Prot
 
 Note : After completion of email sending turn off less secure apps option
 
-### First will send an email by giving static data
-
-#### Create a view to send an email in views.py with name 
-
-* With below two lines of code we can send an email with django. Here we used send_mail class from django.core.mail, This sen_mail() class parameters are described below.
-	* subject : Give subject of an email need to be sent
-	* message : Email body or information need to be given
-	* from_email : Sender email need to be mentioned 
-	* recepie_list : List of receiver emails need to be given
-
-```python
-from django.core.mail import send_mail
-send_mail(
-    'Subject here',
-    'Here is the message.',
-    'from@example.com',
-    ['to@example.com']
-)```
-
-
-### Procedure for sending an email using form data
 
 #### Add smtp and gmail account details in settings.py file existed in project folder
 
@@ -54,12 +34,9 @@ EMAIL_HOST_PASSWORD = '********' # Password of your gmail account
 ```python
 from django import forms  
 class EmailForm(forms.Form):      
-    email     = forms.EmailField(label = '', max_length = 40, 
-    	        widget=forms.EmailInput(attrs={'placeholder':'Enter Sender Email'}))
-    subject  = forms.CharField(label = '', max_length = 60, 
-    	       widget=forms.TextInput(attrs={'placeholder':'Enter Subject of Email'}))
-    body  = forms.CharField(label = '', max_length = 100, 
-    	    widget = forms.Textarea(attrs = {'placeholder':'Enter Email Body'}))  
+    email     = forms.EmailField(label = '', max_length = 40, widget=forms.EmailInput(attrs={'placeholder':'Enter Sender Email'}))
+    subject  = forms.CharField(label = '', max_length = 60, widget=forms.TextInput(attrs={'placeholder':'Enter Subject of Email'}))
+    body  = forms.CharField(label = '', max_length = 100, widget = forms.Textarea(attrs = {'placeholder':'Enter Email Body'}))  
     file      = forms.FileField(label = '') # for creating file input
  
 ```
@@ -70,8 +47,13 @@ class EmailForm(forms.Form):
 * In this case myProject is projectname and email_sending is appname
 	* Imported settings from myProject to access host email address and static file path
 	* Imported EmailForm from forms.py in email_sending app
-* EmailMessage is the classname in django.core.mail used for sending an email this class needs subject of email, body of email, sender mail, receiver mail parameters
-	* attch_file() is function of EmailMessage class to send an attacment along with email, It requires file path
+* EmailMessage is the classname in django.core.mail used for sending an email this class needs following parameters
+	* subject: The subject line of the email.
+	* body: The body text. This should be a plain text message.
+	* from_email: The sender’s address.
+	* to: A list or tuple of recipient addresses.
+* attch_file() is function of EmailMessage class 
+	* It requires path of the static file to be sent as attachment
 	
 ```python
 from django.shortcuts import render
