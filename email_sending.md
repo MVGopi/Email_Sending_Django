@@ -15,8 +15,10 @@ Note : After completion of email sending turn off less secure apps option
 
 #### Add smtp and gmail account details in settings.py file existed in project folder
 
-* EMAIL_USE_TLS is to be enabled for security reasons. TLS (Transport Layer Security) encrypts all the SMTP commands.
-* EMAIL_HOST is for mentioning which sever is to be connected i.e server location
+* EMAIL_USE_TLS to be enabled for security reasons. TLS (Transport Layer Security) encrypts all the SMTP commands.
+* EMAIL_HOST is for mentioning which sever is to be connected i.e server location.
+* EMAIL_PORT for giving port number of the gmsil server i.e 587 
+* EMAIL_HOST_USER and EMAIL_HOST_PASSWORD are from which user the mail is going to be send and it's password. 
 
 ```python
 EMAIL_USE_TLS = True  
