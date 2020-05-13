@@ -24,8 +24,8 @@ Note : After completion of email sending turn off less secure apps option
 EMAIL_USE_TLS = True  
 EMAIL_HOST = 'smtp.gmail.com'  
 EMAIL_PORT = 587  
-EMAIL_HOST_USER = 'sender_username@gmail.com'
-EMAIL_HOST_PASSWORD = '********'
+EMAIL_HOST_USER = 'sender_username@gmail.com' # Your gmail ID
+EMAIL_HOST_PASSWORD = '********' # Password of your gmail account
 ```
 
 
