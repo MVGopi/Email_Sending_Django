@@ -23,13 +23,13 @@ Note : After completion of email sending turn off less secure apps option
 
 ```python
 from django.core.mail import send_mail
-
 send_mail(
     'Subject here',
     'Here is the message.',
     'from@example.com',
     ['to@example.com']
 )```
+
 
 ### Procedure for sending an email using form data
 
