@@ -2,7 +2,7 @@
 
 Python provides a mail sending interface using smtplib(Simple Mail Transfer Protocol) module, Django provides an inbuilt classes over it. These classes are provided to make sending email extra quick, to help test email sending during development. Follow the given below procedure for sending an email.
 
-##### 1. Enable Less Secure Apps Option in Google Account Settings
+#### 1. Enable Less Secure Apps Option in Google Account Settings
 
 * Google Account Settings
     * Security
@@ -13,7 +13,7 @@ Python provides a mail sending interface using smtplib(Simple Mail Transfer Prot
 Note : After completion of email sending turn off less secure apps option
 
 
-##### 2. Add smtp and gmail account details in settings.py file existed in project folder
+#### 2. Add smtp and gmail account details in settings.py file existed in project folder
 
 * EMAIL_USE_TLS to be enabled for security reasons. TLS (Transport Layer Security) encrypts all the SMTP commands.
 * EMAIL_HOST is for mentioning which sever is to be connected i.e server location.
@@ -29,7 +29,7 @@ EMAIL_HOST_PASSWORD = '********' # Password of your gmail account
 ```
 
 
-##### 3. Create forms.py file in app folder for generating a form with email, subject, body, file fields by using below lines of code
+#### 3. Create forms.py file in app folder for generating a form with email, subject, body, file fields by using below lines of code
 
 ```python
 from django import forms  
@@ -42,7 +42,7 @@ class EmailForm(forms.Form):
 ```
 
 
-##### 4. In views.py from app folder create a view for sending an email as shown below
+#### 4. In views.py from app folder create a view for sending an email as shown below
 
 * In this case myProject is projectname and email_sending is appname
 	* Imported settings from myProject to access host email address and static file path
@@ -80,7 +80,7 @@ def sendMail(request):
 ```
 
 
-##### 5. Create email.html file in templates folder existed in app folder with below lines of html code
+#### 5. Create email.html file in templates folder existed in app folder with below lines of html code
 
 ```html
 <!DOCTYPE html>
@@ -100,7 +100,7 @@ def sendMail(request):
 ```
 
 
-##### 6. Now include sendMail view in urls.py existed in project folder
+#### 6. Now include sendMail view in urls.py existed in project folder
 
 ```python
 from django.contrib import admin
@@ -114,16 +114,16 @@ urlpatterns = [
 ```
 
 
-##### 7. Run the server and check in browser will get an form for entering details to send an email as shown below
+#### 7. Run the server and check in browser will get an form for entering details to send an email as shown below
 
 ![Github Image](https://github.com/MVGopi/Email_Sending_Django/blob/master/email_form.JPG)
 
 
-##### 8. Enter information to send an email in the form and click on send, So that your email is sent successfully
+#### 8. Enter information to send an email in the form and click on send, So that your email is sent successfully
 
 * Confirm that receiver got an email along with attachment, Thus how we can send an email using Django. For more information about this email sending can check the below references given
 
 
-##### Reference
+#### Reference
 
 [Email Sending Using Django Reference Link](https://docs.djangoproject.com/en/3.0/topics/email/)
