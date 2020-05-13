@@ -1,8 +1,6 @@
 ## Email Sending in Django
 
-Python provides a mail sending interface using smtplib(Simple Mail Transfer Protocol) module, Django provides an inbuilt classes over it. These classes are provided to make sending email extra quick, to help test email sending during development. Follow the procedure given below to send an email.
-
-
+Python provides a mail sending interface using smtplib(Simple Mail Transfer Protocol) module, Django provides an inbuilt classes over it. These classes are provided to make sending email extra quick, to help test email sending during development.
 #### Enable Less Secure Apps Option in Google Account Settings
 
 * Google Account Settings
@@ -12,6 +10,28 @@ Python provides a mail sending interface using smtplib(Simple Mail Transfer Prot
 ![Github Image](https://github.com/MVGopi/Email_Sending_Django/blob/master/secure.JPG)
 
 Note : After completion of email sending turn off less secure apps option
+
+### First will send an email by giving static data
+
+#### Create a view to send an email in views.py with name 
+
+* With below two lines of code we can send an email with django. Here we used send_mail class from django.core.mail, This sen_mail() class parameters are described below.
+	* subject : Give subject of an email need to be sent
+	* message : Email body or information need to be given
+	* from_email : Sender email need to be mentioned 
+	* recepie_list : List of receiver emails need to be given
+
+```python
+from django.core.mail import send_mail
+
+send_mail(
+    'Subject here',
+    'Here is the message.',
+    'from@example.com',
+    ['to@example.com']
+)```
+
+### Procedure for sending an email using form data
 
 #### Add smtp and gmail account details in settings.py file existed in project folder
 
